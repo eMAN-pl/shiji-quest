@@ -24,8 +24,11 @@ const gameState = {
 
 // ===== LOAD ASSETS =====
 
+// Base URL for assets (works with Vite base path)
+const base = import.meta.env.BASE_URL;
+
 // Logo
-k.loadSprite("shiji-logo", "/Logo.png");
+k.loadSprite("shiji-logo", `${base}Logo.png`);
 
 // Generate character sprites
 const frontendSprite = generateCharacterSprite({
@@ -81,11 +84,11 @@ k.loadSprite("bug", generateBugSprite(), {
 });
 
 // ===== LOAD AUDIO =====
-k.loadSound("jump", "/jump.wav");
-k.loadSound("coin", "/coin.wav");
-k.loadSound("hit", "/hit.wav");
-k.loadSound("powerup", "/powerup.wav");
-k.loadSound("victory", "/victory.wav");
+k.loadSound("jump", `${base}jump.wav`);
+k.loadSound("coin", `${base}coin.wav`);
+k.loadSound("hit", `${base}hit.wav`);
+k.loadSound("powerup", `${base}powerup.wav`);
+k.loadSound("victory", `${base}victory.wav`);
 k.loadSound("music", "https://ericskiff.com/music/Resistor%20Anthems/03%20Chibi%20Ninja.mp3");
 
 // Load scenes
